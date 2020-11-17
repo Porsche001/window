@@ -1,0 +1,31 @@
+1. Create a bootable flash drive or DVD of Windows 10 using media creation tool on any other computer.
+2. Now plug in the usb to your computer and boot it with USB.
+3. After booting your computer with flash drive, you will see the installation window. Select the language as english and click NEXT.
+4. Now on the next screen, click "Repair Your Computer" option.
+5. Now you will enter into recovery mode. Select "Troubleshoot" option.
+6. Now select "Advanced Options".
+7. Now select "Command Prompt" option and command prompt will be popped up.
+8. In command prompt, check for the drive in which windows is installed. Use the following command to check the folders inside the drive:
+dir X: <press enter> [here, X is the drive letter which is C, D, E... and so on.]
+9. If you get the drive which contains "Windows" folder in it, switch to that drive using the following command. For example, suppose your C: drive contains the Windows files, in command prompt, type C: and press enter.
+10: Now type the following command to go to system32 folder.
+cd windows/system32 <press enter>
+11. After selecting the system32 folder in command prompt, type the following commands:
+ren sethc.exe setbak.exe <press enter>
+ren cmd.exe sethc.exe <press enter>
+12. Now exit from the command prompt and restart the computer.
+13. After restarting the computer, you will be at the login screen. Now press shift keys continuously for the 5 times.
+14. You will see that command prompt is opened on the login screen. Type the following command to check the number of user accounts in your computer:
+net user <press enter>
+15. Now you will see your username in the available user account list. For example, my user account is Ashutosh, so I'll reset the password for my user account by running the following command:
+net user ashutosh 12345 <press enter> [you can replace your username instead of Ashutosh]
+16. Now exit from the command prompt and login using the new password 12345.
+17. You will see that you are logged in successfully in your computer and you can use it now.
+18. If you are logged in using a microsoft account but don't know the password, then you can log in by creating a new user account with administrative rights. To create new user account, use the following commands in command prompt (step 15)
+net user /add test 12345
+net localgroup administrators test /add
+19. Now restart the computer and on login screen, you will get a new user, "test". Just sign in to that account using the password 12345 and you will be signed in.
+20. After recovering your account, again repeat the steps 1 to 10 and type the following command in command prompt:
+ren sethc.exe cmd.exe <press enter>
+ren setbak.exe sethc.exe <press enter>
+21. Now restart the computer and use your computer.
